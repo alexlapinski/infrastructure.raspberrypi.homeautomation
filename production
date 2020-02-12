@@ -1,0 +1,4 @@
+# Production Inventory
+
+[2525_cindy_ln]
+192.168.1.112   ansible_connection=ssh  ansible_user=pi
