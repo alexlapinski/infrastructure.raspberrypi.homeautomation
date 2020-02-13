@@ -35,6 +35,7 @@
   command:
     cmd: cp /usr/local/share/motioneye/extra/motioneye.systemd-unit-local /etc/systemd/system/motioneye.service
     creates: /etc/systemd/system/motioneye.service
+    # TODO: Edit file, convert to python2, not 3
 
 - name: Start / Init MotionEye Daemon
   systemd:
