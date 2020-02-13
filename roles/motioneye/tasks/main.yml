@@ -10,9 +10,10 @@
     deb: /home/pi/pi_buster_motion.armhf.deb
 - name: Install MotionEye Dependencies
   apt:
-    name: python3-pip, python-pip, python-dev, libssl-dev, libcurl4-openssl-dev, libjpeg-dev, libz-dev
+    name: python-pip, python-dev, libssl-dev, libcurl4-openssl-dev, libjpeg-dev, libz-dev
 - name: Install MotionEye
   pip:
+    virtualenv: python2.7
     name: motioneye
 
 - name: Prepare Configuration for MotionEye
