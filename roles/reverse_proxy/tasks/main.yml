@@ -6,8 +6,8 @@
     state: latest
 
 - name: Remove default nginx config
-    file:
-    name: /etc/ngonx/sites-enabled/default
+  file:
+    name: /etc/nginx/sites-enabled/default
     state: absent
 
 - name: Install system nginx config

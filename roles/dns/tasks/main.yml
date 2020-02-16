@@ -1,0 +1,26 @@
+---
+- name: Install DNSMasq
+  apt:
+    name: dnsmasq
+
+- name: Remove Old DNSMasq Config
+  file:
+    name: /etc/dnsmasq.conf
+    state: absent
+
+- name: Provision DNSMasq Config
+  template:
+    src: templates/dnsmasq.conf.j2
+    dest: /etc/dnsmasq.conf
+
+- name: Update Hosts file
+  template:
+    src: templates/hosts.j2
+    dest: /etc/hosts
+
+- name: Start / Init Dnsmasq Daemon
+  systemd:
+    name: dnsmasq
+    state: restarted
+    enabled: yes
+    daemon_reload: yes

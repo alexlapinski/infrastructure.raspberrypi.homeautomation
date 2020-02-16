@@ -10,4 +10,4 @@
   roles:
     - baseupdates
     - motioneye
-    - openhab
+    - dns

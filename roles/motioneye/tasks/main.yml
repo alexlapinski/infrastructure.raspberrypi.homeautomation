@@ -13,7 +13,7 @@
     name: python-pip, python-dev, libssl-dev, libcurl4-openssl-dev, libjpeg-dev, libz-dev
 - name: Install MotionEye
   pip:
-    virtualenv: python2.7
+    executable: /usr/bin/pip
     name: motioneye
 
 - name: Prepare Configuration for MotionEye
