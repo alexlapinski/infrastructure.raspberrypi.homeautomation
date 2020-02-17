@@ -1,0 +1,15 @@
+---
+# tasks file for java_runtime
+- name: add Azul Systems Java apt key
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 27BC0C8CB3D81623F59BDADCB1998361219BD9C9
+
+- name: add Azul Systems Java apt repository
+  apt_repository:
+    repo: deb http://repos.azulsystems.com/debian stable main
+    state: present
+
+- name: install JDK via apt
+  apt:
+    name: zulu-embedded-{{ java_zulu_version }}
