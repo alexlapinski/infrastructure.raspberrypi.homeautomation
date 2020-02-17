@@ -13,7 +13,7 @@ jobs:
       - name: ansible-lint
         uses: ansible/ansible-lint-action@v4.1.0.post0
 
-  #test:
+  test:
   #  name: Run Ansible tests with moecule
   #  runs-on: ubuntu-latest
   #  steps:
