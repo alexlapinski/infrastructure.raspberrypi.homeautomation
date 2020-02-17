@@ -25,21 +25,6 @@ playbook   ?= site
 roles_path ?= "roles/"
 env        ?= production
 mkfile_dir ?= $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
-ifeq ("$(wildcard $(mkfile_dir)pass.sh)", "")
-  opts     ?= $(args)
-else # Handle vault password if any
-  ifeq ("$(shell $(mkfile_dir)pass.sh 2> /dev/null)", "")
-    opts     ?= $(args)
-  else
-    opts     ?= $(args) --vault-password-file=$(mkfile_dir)pass.sh
-  endif
-endif
-ifneq ("$(limit)", "")
-  opts     := $(opts) --limit="$(limit)"
-endif
-ifneq ("$(tag)", "")
-  opts     := $(opts) --tag="$(tag)"
-endif
 
 ##
 # TASKS
@@ -75,37 +60,6 @@ group ?=all
 .PHONY: list
 list: ## make list [group=all] [env=hosts] # List hosts inventory
 	@env=$(env) ansible --inventory-file="$(env)" $(group) --list-hosts
-
-.PHONY: vault
-vault: mandatory-file-param ## make vault file=/tmp/vault.yml [env=hosts] [args=<ansible-vault arguments>] # Edit or create a vaulted file
-	@[ -f "$(file)" ] && env=$(env) ansible-vault $(opts) edit "$(file)" || \
-	env=$(env) ansible-vault $(opts) create "$(file)"
-
-.PHONY: console
-console: ## make console [env=hosts] [args=<ansible-console arguments>] # Run an ansible console
-	@env=$(env) ansible-console --inventory-file="$(env)" $(opts)
-
-group ?=all
-.PHONY: facts
-facts: ## make facts [group=all] [env=hosts] [args=<ansible arguments>] # Gather facts from your hosts
-	@env=$(env) ansible --module-name="setup" --inventory-file="$(env)" $(opts) --tree="out/" $(group)
-
-.PHONY: cmdb
-cmdb: ## make cmdb # Create HTML inventory report
-	@ansible-cmdb "out/" > list-servers.html
-
-.PHONY: bootstrap
-bootstrap: ## make bootstrap # Install ansible (Ubuntu only)
-	@apt-get install -y software-properties-common && \
-	apt-add-repository ppa:ansible/ansible && \
-	apt-get update && \
-	apt-get install -y ansible
-
-.PHONY: mandatory-host-param mandatory-file-param
-mandatory-host-param:
-	@[ ! -z $(host) ]
-mandatory-file-param:
-	@[ ! -z $(file) ]
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
