@@ -9,13 +9,13 @@
       apt: update-cache=yes
   roles:
     - baseupdates
-    - motioneye
-    - dns
+#    - motioneye
+#    - dns
     - name: reverse_proxy
       vars:
-        domain: cam.local.net
-        port: 8765
+        site_domain: cam.local.net
+        target_port: 8765
     - name: reverse_proxy
       vars:
-        domain: hab.local.net
-        port: 9000
+        site_domain: hab.local.net
+        target_port: 9000
