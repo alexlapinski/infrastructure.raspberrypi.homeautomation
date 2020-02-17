@@ -1,0 +1,11 @@
+server {
+    listen 80;
+    
+    server_name {{domain}};
+    
+    location /cams/ {
+        proxy_pass http://127.0.0.1:{{port}}/;
+        proxy_read_timeout 120s;
+        access_log off;
+    }
+}

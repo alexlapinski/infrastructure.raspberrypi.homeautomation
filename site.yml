@@ -11,3 +11,11 @@
     - baseupdates
     - motioneye
     - dns
+    - name: reverse_proxy
+      vars:
+        domain: cam.local.net
+        port: 8765
+    - name: reverse_proxy
+      vars:
+        domain: hab.local.net
+        port: 9000

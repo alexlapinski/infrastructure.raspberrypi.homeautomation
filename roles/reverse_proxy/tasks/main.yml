@@ -13,6 +13,20 @@
 - name: Install system nginx config
   template:
     src: templates/nginx.conf.j2
-    dest: /et/nginx/nginx.conf
-  notify:
-    - reload nginx
+    dest: /etc/nginx/nginx.conf
+
+- name: Create site configuration
+  template:
+    src: templates/reverse_proxy_site.conf.j2
+    dest: /etc/nginx/sites-available/{{domain}}.conf
+
+- name: Create Symlink (Enable Site)
+  file:
+    src: /etc/nginx/sites-available/{{domain}}.conf
+    dest: /etc/nginx/sites-enabled/{{domain}}
+    state: link
+
+- name: Start Nginx
+  service:
+    name: nginx
+    state: started
