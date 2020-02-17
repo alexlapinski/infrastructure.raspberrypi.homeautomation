@@ -3,7 +3,7 @@ server {
     
     server_name {{site_domain}};
     
-    location /cams/ {
+    location / {
         proxy_pass http://127.0.0.1:{{target_port}}/;
         proxy_read_timeout 120s;
         access_log off;
