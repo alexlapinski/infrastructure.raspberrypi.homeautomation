@@ -1,2 +1,2 @@
 ---
-nginx_version=1.14.*
+nginx_version: 1.14.*
