@@ -13,10 +13,14 @@ ansible all -i production -m ping
 ansible-playbook -i production site.yml
 ```
 
+## Lint
+```
+ansible-lint site.yml
+```
+
 ## TODO
  * Install OpenHab
  * Install Nginx on RaspPi
-    * Configure to redirect *:80/motion -> motioneye
     * Configure to redirect *:80/openhab -> openhab
  * Setup SSL -- Let's Encrypt?
- * Setup Home DNS
+ 
