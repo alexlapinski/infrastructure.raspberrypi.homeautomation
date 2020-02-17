@@ -1,6 +1,7 @@
 # infrastructure.raspberrypi.homeautomation
 A set of ansible scripts to provision my home raspberry pi home automation hub.
 
+![Ansible Lint](https://github.com/alexlapinski/infrastructure.raspberrypi.homeautomation/workflows/Ansible%20Lint/badge.svg?branch=master)
 
 ## Debug
 ```
