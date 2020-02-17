@@ -23,4 +23,8 @@ ansible-lint site.yml
  * Install Nginx on RaspPi
     * Configure to redirect *:80/openhab -> openhab
  * Setup SSL -- Let's Encrypt?
- 
+ * Further Refactor Structure & roles themselves
+ * Setup Auto-Docs -> Github Pages (via actions)
+ * Setup Molecule
+   * Basic Molecule run on push
+   * Build out tests for each role
