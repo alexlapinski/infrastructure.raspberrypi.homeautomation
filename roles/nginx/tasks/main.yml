@@ -2,7 +2,7 @@
 - name: Install Nginx
   apt:
     name: nginx
-    state: latest
+    state: "{{ nginx_version }}"
 
 - name: Remove default nginx config
   file:
