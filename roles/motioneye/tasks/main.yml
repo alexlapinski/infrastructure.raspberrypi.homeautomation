@@ -2,11 +2,11 @@
   apt:
     name: ffmpeg, libmariadb3, libpq5, libmicrohttpd12
 - name: Get Motion
-  get_url: 
+  get_url:
     url: https://github.com/Motion-Project/motion/releases/download/release-4.2.2/pi_buster_motion_4.2.2-1_armhf.deb
     dest: /home/pi/pi_buster_motion.armhf.deb
 - name: Install Motion Package
-  apt: 
+  apt:
     deb: /home/pi/pi_buster_motion.armhf.deb
 - name: Install MotionEye Dependencies
   apt:

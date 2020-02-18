@@ -10,7 +10,7 @@
     dest: /etc/nginx/sites-enabled/{{ site_domain }}
     state: link
 
-- name: Start Nginx
+- name: Restart Nginx
   service:
     name: nginx
     state: restarted

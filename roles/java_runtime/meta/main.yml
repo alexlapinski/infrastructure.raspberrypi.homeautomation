@@ -6,10 +6,7 @@ galaxy_info:
   description: Install java runtime (zulu) for dependant apps.
   license: MIT
   min_ansible_version: 1.2
-
   platforms:
-  - name: Rasbpian
-
+  - name: rasbpian
   galaxy_tags: []
-  
 dependencies: []
