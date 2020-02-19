@@ -40,8 +40,8 @@ inventory: ## make inventory [provider=<ec2|gce...>] [env=hosts] # Download dyna
 	mv $(provider).py $(env)
 
 .PHONY: lint
-lint: ## make lint [playbook=setup] [env=hosts] [args=<ansible-playbook arguments>] # Check syntax of a playbook
-	@env=$(env) ansible-playbook --inventory-file="$(env)" --syntax-check $(opts) "$(playbook).yml"
+lint:
+	@env=$(env) ansible-lint "$(playbook).yml"
 
 .PHONY: debug
 debug: mandatory-host-param ## make debug host=hostname [env=hosts] [args=<ansible arguments>] # Debug a host's variable

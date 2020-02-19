@@ -6,6 +6,7 @@
   git:
     repo: 'https://github.com/pi-hole/pi-hole.git'
     dest: /usr/src/pi-hole
+    version: master
     clone: yes
     depth: 1
 
@@ -13,3 +14,4 @@
 - name: Execute Pi-Hole installer script
   command:
     cmd: '/usr/src/pi-hole/automated\ install/basic-install.sh'
+    creates: /usr/local/bin/pihole
