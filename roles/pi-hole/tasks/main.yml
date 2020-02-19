@@ -11,5 +11,5 @@
 
 # Execute Bash script
 - name: Execute Pi-Hole installer script
-  script:
-    cmd: '/usr/src/pi-hole/automated install/basic-install.sh'
+  command:
+    cmd: '/usr/src/pi-hole/automated\ install/basic-install.sh'
