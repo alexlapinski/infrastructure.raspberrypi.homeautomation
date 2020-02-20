@@ -16,6 +16,11 @@
         upstream_dns_servers:
           - 8.8.8.8
           - 8.8.4.4
+        dnsentries:
+          - domain: cam.local.net
+            ip: 192.168.1.112
+          - domain: hab.local.net
+            ip: 192.168.1.112
     - name: reverse_proxy
       vars:
         site_domain: cam.local.net

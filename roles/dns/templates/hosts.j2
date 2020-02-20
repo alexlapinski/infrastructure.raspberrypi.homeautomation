@@ -4,5 +4,6 @@ ff02::1         ip6-allnodes
 ff02::2         ip6-allrouters
 
 127.0.1.1       raspberrypi
-192.168.1.112   cam.local.net   # MotionEyeOS
-192.168.1.112   hab.local.net   # OpenHAB
+{% for item in dnsentries %}
+{{item.ip}} {{item.domain}}
+{% endfor %}
