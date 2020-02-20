@@ -19,9 +19,7 @@ ansible-lint site.yml
 ```
 
 ## TODO
- * Install OpenHab
- * Install Nginx on RaspPi
-    * Configure to redirect *:80/openhab -> openhab
+ * Install Pi-Hole -- keeps hanging?
  * Setup SSL -- Let's Encrypt?
  * Further Refactor Structure & roles themselves
  * Setup Auto-Docs -> Github Pages (via actions)
