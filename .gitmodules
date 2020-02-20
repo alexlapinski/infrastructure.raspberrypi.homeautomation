@@ -1,0 +1,3 @@
+[submodule "roles/ansible.role.dnsmasq"]
+	path = roles/ansible.role.dnsmasq
+	url = https://github.com/alexlapinski/ansible.role.dnsmasq.git

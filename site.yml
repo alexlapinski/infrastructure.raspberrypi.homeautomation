@@ -10,7 +10,7 @@
   roles:
     - name: baseupdates
     - name: motioneye
-    - name: dns
+    - name: ansible.role.dnsmasq
       vars:
         localdomain: local.net
         upstream_dns_servers:
