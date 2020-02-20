@@ -1,8 +1,10 @@
 domain-needed
 bogus-priv
 no-resolv
-server=8.8.8.8
-server=8.8.4.4
 cache-size=1000
 
-local=/local.net/
+{% for item in upstream_dns_servers %}
+server={{item}}
+{% endfor %}
+
+local=/{{ localdomain }}/

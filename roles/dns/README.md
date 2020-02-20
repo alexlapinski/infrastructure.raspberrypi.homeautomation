@@ -1,14 +1,9 @@
-Role Name
-=========
+# DNSMasq
 
-A brief description of the role goes here.
+Setup the DNSMasq DNS Server for local DNS.
 
-Requirements
-------------
-
-Any pre-requisites that may not be covered by Ansible itself or the role should
-be mentioned here. For instance, if the role uses the EC2 module, it may be a
-good idea to mention in this section that the boto package is required.
+## Requirements
+None.
 
 Role Variables
 --------------
@@ -39,7 +34,7 @@ passed in as parameters) is always nice for users too:
 License
 -------
 
-BSD
+MIT
 
 Author Information
 ------------------

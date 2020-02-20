@@ -1,4 +1,5 @@
 ---
+# @action Debian Apt Key # Install the apt-key for debian repository
 - name: install Debian apt key
   apt_key:
     url: 'https://ftp-master.debian.org/keys/archive-key-9.asc'
@@ -9,6 +10,7 @@
     - apt
     - system
 
+# @action Debian Repo # Install the Debian apt repository
 - name: install Debian apt repositories
   apt_repository:
     repo: 'deb http://ftp.debian.org/debian {{ item }} main contrib non-free'
@@ -23,6 +25,7 @@
     - apt
     - system
 
+# @action Set Timezone # Update the System Timezone to EST
 - name: Update System Timezone
   timezone:
     name: America/New_York

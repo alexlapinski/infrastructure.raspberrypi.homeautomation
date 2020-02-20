@@ -1,3 +1,11 @@
+# 
+# @meta name: RaspberryPi - Base Updates
+# @meta author: Alex Lapinski
+# @meta email: contact@alexlapinski.name
+# @meta description: Base updates (apt update & apt repo), as well as setting the timezone
+# @meta license: MIT
+#
+#
 ---
 galaxy_info:
   author: Alex Lapinski

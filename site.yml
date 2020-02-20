@@ -11,6 +11,11 @@
     - name: baseupdates
     - name: motioneye
     - name: dns
+      vars:
+        localdomain: local.net
+        upstream_dns_servers:
+          - 8.8.8.8
+          - 8.8.4.4
     - name: reverse_proxy
       vars:
         site_domain: cam.local.net
