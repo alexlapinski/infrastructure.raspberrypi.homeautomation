@@ -20,4 +20,4 @@
         site_domain: hab.local.net
         target_port: 8080
     - name: openhab
-    - name: pi-hole
+    # - name: pi-hole

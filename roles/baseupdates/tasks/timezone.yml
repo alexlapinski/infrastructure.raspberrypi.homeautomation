@@ -1,4 +1,0 @@
----
-- name: Update System Timezone
-  timezone:
-    name: America/NewYork
