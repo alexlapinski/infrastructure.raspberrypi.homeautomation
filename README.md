@@ -6,6 +6,10 @@ A set of ansible scripts to provision my home raspberry pi home automation hub.
 ## Local Setup
  * 1. Clone this repo
  * 2. Update Submodules
+ * 3. Install Ansible dependencies
+      ```sh
+      ansible-galaxy install -r requirements.yml
+      ```
 
 ## Debug
 ```

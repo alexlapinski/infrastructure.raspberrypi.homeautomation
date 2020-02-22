@@ -8,9 +8,9 @@
     - name: apt-update
       apt: update-cache=yes
   roles:
-    - name: baseupdates
-    - name: motioneye
-    - name: ansible.role.dnsmasq
+    - name: alexlapinski.ansible_role_raspbian_baseline
+    - name: alexlapinski.ansible_role_raspbian_motioneye
+    - name: alexlapinski.ansible_role_raspbian_dnsmasq
       vars:
         localdomain: local.net
         upstream_dns_servers:
@@ -21,13 +21,13 @@
             ip: 192.168.1.112
           - domain: hab.local.net
             ip: 192.168.1.112
-    - name: reverse_proxy
+    - name: alexlapinski.ansible_role_raspbian_reverse_proxy
       vars:
         site_domain: cam.local.net
         target_port: 8765
-    - name: reverse_proxy
+    - name: alexlapinski.ansible_role_raspbian_reverse_proxy
       vars:
         site_domain: hab.local.net
         target_port: 8080
-    - name: openhab
-    # - name: pi-hole
+    - name: alexlapinski.ansible_role_raspbian_openhab
+    # - name: alexlapinski.ansible_role_raspbian_pi-hole
