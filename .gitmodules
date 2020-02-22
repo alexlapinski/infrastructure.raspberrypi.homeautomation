@@ -1,3 +1,21 @@
-[submodule "roles/ansible.role.dnsmasq"]
+[submodule "roles/ansible.role.raspbian.dnsmasq"]
 	path = roles/ansible.role.dnsmasq
-	url = https://github.com/alexlapinski/ansible.role.dnsmasq.git
+	url = https://github.com/alexlapinski/ansible.role.raspbian.dnsmasq.git
+[submodule "roles/ansible.role.raspbian.reverse-proxy"]
+	path = roles/ansible.role.raspbian.reverse-proxy
+	url = https://github.com/alexlapinski/ansible.role.raspbian.reverse-proxy.git
+[submodule "roles/ansible.role.raspbian.pi-hole"]
+	path = roles/ansible.role.raspbian.pi-hole
+	url = https://github.com/alexlapinski/ansible.role.raspbian.pi-hole.git
+[submodule "roles/ansible.role.raspbian.openhab"]
+	path = roles/ansible.role.raspbian.openhab
+	url = https://github.com/alexlapinski/ansible.role.raspbian.openhab.git
+[submodule "roles/ansible.role.raspbian.nginx"]
+	path = roles/ansible.role.raspbian.nginx
+	url = https://github.com/alexlapinski/ansible.role.raspbian.nginx.git
+[submodule "roles/ansible.role.raspbian.java-runtime"]
+	path = roles/ansible.role.raspbian.java-runtime
+	url = https://github.com/alexlapinski/ansible.role.raspbian.java-runtime.git
+[submodule "roles/ansible.role.raspbian.baseline"]
+	path = roles/ansible.role.raspbian.baseline
+	url = https://github.com/alexlapinski/ansible.role.raspbian.baseline.git
