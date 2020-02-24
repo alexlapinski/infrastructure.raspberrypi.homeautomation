@@ -1,0 +1,4 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Ansbile Playbook for Home Automation"
+theme = "hugo-theme-learn"
