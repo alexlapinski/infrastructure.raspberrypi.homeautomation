@@ -19,3 +19,6 @@
 [submodule "roles/ansible.role.raspbian.baseline"]
 	path = roles/ansible.role.raspbian.baseline
 	url = https://github.com/alexlapinski/ansible.role.raspbian.baseline.git
+[submodule "hugo/themes/hugo-theme-learn"]
+	path = hugo/themes/hugo-theme-learn
+	url = https://github.com/matcornic/hugo-theme-learn.git
