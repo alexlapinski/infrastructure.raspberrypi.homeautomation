@@ -1,5 +1,5 @@
 # Settings in the [build] context are global and are applied to all contexts
 [build]
-  base = "docs/"
-  publish = "docs/public/"
+  base = "hugo/"
+  publish = "hugo/public/"
   command = "hugo"
