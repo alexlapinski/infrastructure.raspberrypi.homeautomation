@@ -1,3 +1,24 @@
 [submodule "hugo/themes/hugo-theme-learn"]
 	path = hugo/themes/hugo-theme-learn
 	url = https://github.com/matcornic/hugo-theme-learn.git
+[submodule "roles/alexlapinski.raspbian_dnsmasq"]
+	path = roles/raspbian_dnsmasq
+	url = git@github.com:alexlapinski/raspbian_dnsmasq.git
+[submodule "roles/alexlapinski.raspbian_openhab"]
+	path = roles/raspbian_openhab
+	url = git@github.com:alexlapinski/raspbian_openhab.git
+[submodule "roles/alexlapinski.raspbian_baseline"]
+	path = roles/raspbian_baseline
+	url = git@github.com:alexlapinski/raspbian_baseline.git
+[submodule "roles/alexlapinski.raspbian_reverse_proxy"]
+	path = roles/raspbian_reverse_proxy
+	url = git@github.com:alexlapinski/raspbian_reverse_proxy.git
+[submodule "roles/alexlapinski.raspbian_nginx"]
+	path = roles/alexlapinski.raspbian_nginx
+	url = git@github.com:alexlapinski/raspbian_nginx.git
+[submodule "roles/alexlapinski.raspbian_pi_hole"]
+	path = roles/alexlapinski.raspbian_pi_hole
+	url = git@github.com:alexlapinski/raspbian_pi_hole.git
+[submodule "roles/alexlapinski.raspbian_motioneye"]
+	path = roles/alexlapinski.raspbian_motioneye
+	url = git@github.com:alexlapinski/raspbian_motioneye.git
