@@ -1,6 +1,6 @@
 [submodule "roles/ansible.role.raspbian.dnsmasq"]
-	path = roles/ansible.role.dnsmasq
-	url = https://github.com/alexlapinski/ansible.role.raspbian.dnsmasq.git
+	path = roles/ansible.role.raspbian.dnsmasq
+	url = git@github.com:alexlapinski/ansible.role.raspbian.dnsmasq.git
 [submodule "roles/ansible.role.raspbian.reverse-proxy"]
 	path = roles/ansible.role.raspbian.reverse-proxy
 	url = https://github.com/alexlapinski/ansible.role.raspbian.reverse-proxy.git
