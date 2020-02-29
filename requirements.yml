@@ -1,7 +1,7 @@
 - src: lean_delivery.java
-- src: alexlapinski.ansible_role_raspbian_baseline
-- src: alexlapinski.ansible_role_raspbian_motioneye
-- src: alexlapinski.ansible_role_raspbian_java_runtime
-- src: alexlapinski.ansible_role_raspbian_dnsmasq
-- src: alexlapinski.ansible_role_raspbian_reverse_proxy
-- src: alexlapinski.ansible_role_raspbian_openhab
+- src: alexlapinski.raspbian_baseline
+- src: alexlapinski.raspbian_motioneye
+- src: alexlapinski.raspbian_java_runtime
+- src: alexlapinski.raspbian_dnsmasq
+- src: alexlapinski.raspbian_reverse_proxy
+- src: alexlapinski.raspbian_openhab
