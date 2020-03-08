@@ -1,0 +1,24 @@
+---
+# tasks file for openhab
+- name: Install Prerequisite packages
+  apt:
+    name: screen, mc, vim, git, htop
+    state: present
+- name: Add APT Key for OpenHAB
+  apt_key:
+    url: https://bintray.com/user/downloadSubjectPublicKey?username=openhab
+    state: present
+- name: add OpenHABapt repository
+  apt_repository:
+    repo: deb https://dl.bintray.com/openhab/apt-repo2 stable main
+    state: present
+- name: Install OpenHAB
+  apt:
+    name: openhab2, openhab2-addons
+    state: present
+
+- name: Start OpenHAB
+  service:
+    name: openhab2
+    state: started
+    enabled: true

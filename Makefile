@@ -31,7 +31,7 @@ mkfile_dir ?= $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 ##
 .PHONY: install
 install: ## make install [roles_path=roles/] # Install roles dependencies
-	@ansible-galaxy install --roles-path="$(roles_path)" --role-file="requirements.yml"
+	@ansible-galaxy install --roles-path="$(roles_path)" --role-file="requirements.yml" --force
 
 .PHONY: inventory
 inventory: ## make inventory [provider=<ec2|gce...>] [env=hosts] # Download dynamic inventory from Ansible's contrib
@@ -55,6 +55,10 @@ dry-run: ## make dry-run [playbook=setup] [env=hosts] [tag=<ansible tag>] [limit
 .PHONY: run
 run: ## make run [playbook=setup] [env=hosts] [tag=<ansible tag>] [limit=<ansible host limit>] [args=<ansible-playbook arguments>] # Run a playbook
 	@env=$(env) ansible-playbook --inventory-file="$(env)" --diff $(opts) "$(playbook).yml"
+
+.PHONY: run_debug
+run_debug: ## make run [playbook=setup] [env=hosts] [tag=<ansible tag>] [limit=<ansible host limit>] [args=<ansible-playbook arguments>] # Run a playbook
+	@env=$(env) ansible-playbook -vvvv --inventory-file="$(env)" --diff $(opts) "$(playbook).yml"
 
 group ?=all
 .PHONY: list

@@ -1,0 +1,20 @@
+# 
+# @meta name: RaspberryPi - Base Updates
+# @meta author: Alex Lapinski
+# @meta email: contact@alexlapinski.name
+# @meta description: Base updates (apt update & apt repo), as well as setting the timezone
+# @meta license: MIT
+#
+#
+---
+galaxy_info:
+# TODO: Replace with usage by ansible-galaxy backed role
+# : https://github.com/humio/ansible-java
+  author: Alex Lapinski
+  description: Install java runtime (zulu) for dependant apps.
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+  - name: rasbpian
+  galaxy_tags: []
+dependencies: []

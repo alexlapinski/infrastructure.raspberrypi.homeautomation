@@ -1,0 +1,13 @@
+---
+galaxy_info:
+  author: Alex Lapinski
+  description: Setup DataDog's Agent on Raspbian
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+    - name: raspbian
+      version:
+        - all
+  galaxy_tags: []
+
+dependencies:

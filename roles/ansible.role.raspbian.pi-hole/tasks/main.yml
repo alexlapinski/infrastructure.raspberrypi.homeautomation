@@ -1,0 +1,17 @@
+---
+# tasks file for pi-hole
+
+# Clone the Repo
+- name: Clone Pi-Hole code Repo
+  git:
+    repo: 'https://github.com/pi-hole/pi-hole.git'
+    dest: /usr/src/pi-hole
+    version: master
+    clone: yes
+    depth: 1
+
+# Execute Bash script
+- name: Execute Pi-Hole installer script
+  command:
+    cmd: '/usr/src/pi-hole/automated\ install/basic-install.sh'
+    creates: /usr/local/bin/pihole

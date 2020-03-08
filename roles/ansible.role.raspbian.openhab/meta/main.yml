@@ -1,0 +1,25 @@
+# 
+# @meta name: RaspberryPi - Base Updates
+# @meta author: Alex Lapinski
+# @meta email: contact@alexlapinski.name
+# @meta description: Base updates (apt update & apt repo), as well as setting the timezone
+# @meta license: MIT
+#
+#
+---
+galaxy_info:
+  author: Alex Lapinski
+  description: Setup OpenHAB on Raspbian
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+    - name: raspbian
+  galaxy_tags: []
+dependencies:
+  - name: alexlapinski.ansible_role_raspbian_java_runtime
+    vars:
+      
+  - name: lean_delivery.java
+    vars:
+      java_major_version: 8
+      java_distribution: zulu

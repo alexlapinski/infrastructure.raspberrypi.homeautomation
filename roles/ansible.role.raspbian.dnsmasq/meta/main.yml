@@ -1,0 +1,22 @@
+# 
+# @meta name: RaspberryPi - Base Updates
+# @meta author: Alex Lapinski
+# @meta email: contact@alexlapinski.name
+# @meta description: Base updates (apt update & apt repo), as well as setting the timezone
+# @meta license: MIT
+#
+#
+---
+galaxy_info:
+  author: Alex Lapinski
+  description: Setup local DNS using DNSMasq
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+    - name: raspbian
+      versions:
+        - all
+  galaxy_tags:
+    - dns
+    - raspberrypi
+dependencies: []
