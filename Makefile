@@ -17,6 +17,12 @@
 #
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+# -----------------------------
+# Modified by Alex Lapinski <contact@alexlapinski.name>
+# https://alexlapinski.name/ansible
+# -----------------------------
+#
 
 ##
 # VARIABLES
@@ -64,6 +70,10 @@ group ?=all
 .PHONY: list
 list: ## make list [group=all] [env=hosts] # List hosts inventory
 	@env=$(env) ansible --inventory-file="$(env)" $(group) --list-hosts
+
+.PHONY: facts
+facts: ## make facts [group=all] [env=hosts] # List facts for hosts
+	@env=$(env) ansible --inventory-file="$(env)" $(group) -m setup
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
