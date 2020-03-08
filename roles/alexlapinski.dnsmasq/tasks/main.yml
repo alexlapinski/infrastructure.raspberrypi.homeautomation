@@ -3,6 +3,12 @@
   apt:
     name: dnsmasq
 
+- name: Record DNSMasq Installed
+  set_fact:
+    cacheable: yes
+    key_value: dnsmasq_installed=yes
+
+
 - name: Remove Old DNSMasq Config
   file:
     name: /etc/dnsmasq.conf

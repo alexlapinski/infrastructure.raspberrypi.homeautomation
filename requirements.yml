@@ -1,7 +1,2 @@
 - src: lean_delivery.java
-- src: alexlapinski.raspbian_baseline
-- src: alexlapinski.raspbian_motioneye
-- src: alexlapinski.raspbian_java_runtime
-- src: alexlapinski.raspbian_dnsmasq
-- src: alexlapinski.raspbian_reverse_proxy
-- src: alexlapinski.raspbian_openhab
+- src: nginxinc.nginx

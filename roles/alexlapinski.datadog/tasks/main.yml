@@ -15,6 +15,11 @@
   environment:
     DD_API_KEY: "{{datadog_api_key}}"
 
+- name: Record DataDog Installed
+  set_fact:
+    cacheable: yes
+    key_value: datadog_installed=yes
+
 - name: Remove the Bash Script
   file:
     path: /tmp/datadog-installer.sh

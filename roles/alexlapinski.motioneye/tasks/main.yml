@@ -1,20 +1,45 @@
 - name: Install Motion Dependencies
   apt:
     name: ffmpeg, libmariadb3, libpq5, libmicrohttpd12
+
+- name: Record MotionEye Dependencies Installed
+  set_fact:
+    cacheable: yes
+    key_value: motioneye_dependencies_installed=yes
+
 - name: Get Motion
   get_url:
     url: https://github.com/Motion-Project/motion/releases/download/release-4.2.2/pi_buster_motion_4.2.2-1_armhf.deb
     dest: /home/pi/pi_buster_motion.armhf.deb
+
 - name: Install Motion Package
   apt:
     deb: /home/pi/pi_buster_motion.armhf.deb
+
+- name: Record Motion Installed
+  set_fact:
+    cacheable: yes
+    key_value: motion_installed=yes
+
+
 - name: Install MotionEye Dependencies
   apt:
     name: python-pip, python-dev, libssl-dev, libcurl4-openssl-dev, libjpeg-dev, libz-dev
+
+- name: Record MotionEye Dependencies Installed
+  set_fact:
+    cacheable: yes
+    key_value: motioneye_dependencies_installed=yes
+
 - name: Install MotionEye
   pip:
     executable: /usr/bin/pip
     name: motioneye
+
+- name: Record MotionEye Installed
+  set_fact:
+    cacheable: yes
+    key_value: motioneye_installed=yes
 
 - name: Prepare Configuration for MotionEye
   file:
@@ -36,6 +61,12 @@
     cmd: cp /usr/local/share/motioneye/extra/motioneye.systemd-unit-local /etc/systemd/system/motioneye.service
     creates: /etc/systemd/system/motioneye.service
     # TODO: Edit file, convert to python2, not 3
+
+- name: Record MotionEye Service Installed
+  set_fact:
+    cacheable: yes
+    key_value: motioneye_service_installed=yes
+
 
 - name: Start / Init MotionEye Daemon
   systemd:
