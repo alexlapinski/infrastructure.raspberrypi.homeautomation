@@ -1,26 +1,31 @@
 - name: Install Dependencies
+  when: (ansible_facts.datadog_installed is not defined) or (ansible_facts["datadog_installed"] != 'yes')
   apt:
     name: sysstat
     update_cache: true
     state: present
 
 - name: Download Bash Script
+  when: (ansible_facts.datadog_installed is not defined) or (ansible_facts["datadog_installed"] != 'yes')
   get_url:
     url: https://raw.githubusercontent.com/DataDog/dd-agent/master/packaging/datadog-agent/source/setup_agent.sh
     dest: /tmp/datadog-installer.sh
     mode: 0777
 
 - name: Execute Bash Script
+  when: (ansible_facts.datadog_installed is not defined) or (ansible_facts["datadog_installed"] != 'yes')
   shell: /tmp/datadog-installer.sh
   environment:
     DD_API_KEY: "{{datadog_api_key}}"
 
 - name: Record DataDog Installed
+  when: (ansible_facts.datadog_installed is not defined) or (ansible_facts["datadog_installed"] != 'yes')
   set_fact:
     cacheable: yes
     key_value: datadog_installed=yes
 
 - name: Remove the Bash Script
+  when: (ansible_facts.datadog_installed is not defined) or (ansible_facts["datadog_installed"] != 'yes')
   file:
     path: /tmp/datadog-installer.sh
     state: absent

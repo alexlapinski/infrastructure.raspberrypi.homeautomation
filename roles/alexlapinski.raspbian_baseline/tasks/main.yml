@@ -1,6 +1,6 @@
 ---
-# @action Debian Apt Key # Install the apt-key for debian repository
 - name: install Debian apt key
+  when: (ansible_facts.debian_key_installed is not defined) or (ansible_facts.debian_key_installed != 'yes')
   apt_key:
     url: 'https://ftp-master.debian.org/keys/archive-key-9.asc'
     id: 'E1CF20DDFFE4B89E802658F1E0B11894F66AEC98'
@@ -10,8 +10,13 @@
     - apt
     - system
 
-# @action Debian Repo # Install the Debian apt repository
+- name: Record Debian Key Installed
+  set_fact:
+    cacheable: yes
+    key_value: debian_key_installed=yes
+
 - name: install Debian apt repositories
+  when: (ansible_facts.apt_repos is not defined) or (ansible_facts.apt_repos != 'installed')
   apt_repository:
     repo: 'deb http://ftp.debian.org/debian {{ item }} main contrib non-free'
     state: present
@@ -25,10 +30,21 @@
     - apt
     - system
 
+- name: Record Apt Repos Insalled
+  set_fact:
+    cacheable: yes
+    key_value: apt_repos=installed
+
 # @action Set Timezone # Update the System Timezone to EST
 - name: Update System Timezone
+  when: (ansible_facts.timezone is not defined) or (ansible_facts.timezone != 'set')
   timezone:
     name: America/New_York
   tags:
     - timezone
     - system
+
+- name: Record Timezone Set
+  set_fact:
+    cacheable: yes
+    key_value: timezone=set

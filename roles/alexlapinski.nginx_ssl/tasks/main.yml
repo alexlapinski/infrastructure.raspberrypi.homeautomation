@@ -1,0 +1,16 @@
+# ref: https://certbot.eff.org/lets-encrypt/debianstretch-nginx
+---
+- name: Install certbot
+  apt:
+    name:
+      - "certbot"
+      - "python-certbot-nginx"
+    state: present
+
+- name: Setup Nginx with SSL
+  shell: certbot --nginx
+
+- name: Restart Nginx
+  service:
+    name: nginx
+    state: restarted
