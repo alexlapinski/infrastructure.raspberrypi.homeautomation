@@ -75,6 +75,14 @@ list: ## make list [group=all] [env=hosts] # List hosts inventory
 facts: ## make facts [group=all] [env=hosts] # List facts for hosts
 	@env=$(env) ansible --inventory-file="$(env)" $(group) -m setup
 
+.PHONY: test
+test: ## make test # Execute tests
+	@molecule verify
+
+.PHONY: lint
+lint: ## make lint # Lint ansible files
+	@molecule lint
+
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 

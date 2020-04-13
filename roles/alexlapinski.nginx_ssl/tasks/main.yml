@@ -2,12 +2,16 @@
 ---
 - name: Install certbot
   apt:
-    name:
-      - "certbot"
-      - "python-certbot-nginx"
+    name: certbot
+    state: present
+
+- name: Install certbot (python)
+  apt:
+    name: python-certbot-nginx
     state: present
 
 - name: Setup Nginx with SSL
+  become: yes
   shell: certbot --nginx
 
 - name: Restart Nginx
